@@ -19,6 +19,18 @@ def plotBar(datapoint, title, xlabel, ylabel):
 
     return fig
 
+def plotPie(datapoint, title, xlabel, ylabel):
+    fig = go.Figure()
+
+    layout = go.Layout(title= title,
+                    xaxis=dict(title=xlabel),
+                    yaxis=dict(title=ylabel))
+    fig = go.Figure(layout = layout)
+
+    fig.add_trace( go.Pie( values = datapoint.values , labels = datapoint.index ) )
+
+    return fig
+
     
 def plotLine(x, y):
     fig = go.Figure()
